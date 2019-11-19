@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Heartbeat-Boy.cn</id>
     <title>Heartbeat_Boy</title>
-    <updated>2019-11-18T09:22:01.744Z</updated>
+    <updated>2019-11-19T09:51:19.158Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Heartbeat-Boy.cn"/>
     <link rel="self" href="https://Heartbeat-Boy.cn/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://Heartbeat-Boy.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, Heartbeat_Boy</rights>
     <entry>
-        <title type="html"><![CDATA[使用GitHub Page + Gridea 搭建不用不用备案的博客]]></title>
+        <title type="html"><![CDATA[使用GitHub Page + Gridea 搭建不用备案的博客]]></title>
         <id>https://Heartbeat-Boy.cn/post/create_githubpage_blog</id>
         <link href="https://Heartbeat-Boy.cn/post/create_githubpage_blog">
         </link>
