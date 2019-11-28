@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://heartbeat-boy.cn/</id>
     <title>Heartbeat_Boy</title>
-    <updated>2019-11-28T10:31:51.275Z</updated>
+    <updated>2019-11-28T16:44:05.798Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://heartbeat-boy.cn/"/>
     <link rel="self" href="https://heartbeat-boy.cn//atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://heartbeat-boy.cn//images/avatar.png</logo>
     <icon>https://heartbeat-boy.cn//favicon.ico</icon>
     <rights>All rights reserved 2019, Heartbeat_Boy</rights>
+    <entry>
+        <title type="html"><![CDATA[解决GitHub Page 部署博客访问速度慢]]></title>
+        <id>https://heartbeat-boy.cn//post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man</id>
+        <link href="https://heartbeat-boy.cn//post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man">
+        </link>
+        <updated>2019-11-28T16:20:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>本站刚开始就是使用GitHub Page + Gridea 搭建的，还配置了自己的域名，但是由于Github是在国外服务器的原因，所以国内访问速度不是很理想。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本站刚开始就是使用GitHub Page + Gridea 搭建的，还配置了自己的域名，但是由于Github是在国外服务器的原因，所以国内访问速度不是很理想。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用GitHub Page + Gridea 搭建不用备案的博客]]></title>
         <id>https://heartbeat-boy.cn//post/create_githubpage_blog</id>

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" >
 
-<title>以太坊智能合约开发 | Heartbeat_Boy</title>
+<title>解决GitHub Page 部署博客访问速度慢 | Heartbeat_Boy</title>
 <meta name="description" content="我永远屈服于温柔，而你是温柔本身！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1574937051093">
+<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1574959437545">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://heartbeat-boy.cn//styles/main.css">
 
@@ -45,7 +45,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://heartbeat-boy.cn/">
-        <img src="https://heartbeat-boy.cn//images/avatar.png?v=1574937051093" class="site-logo">
+        <img src="https://heartbeat-boy.cn//images/avatar.png?v=1574959437545" class="site-logo">
         <h1 class="site-title">Heartbeat_Boy</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -107,23 +107,44 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">以太坊智能合约开发</h2>
-            <div class="post-date">2019-11-28</div>
+            <h2 class="post-title">解决GitHub Page 部署博客访问速度慢</h2>
+            <div class="post-date">2019-11-29</div>
             
             <div class="post-content">
-              <h3 id="智能合约开发流程">智能合约开发流程</h3>
-<p>选择开发环境编写合约代码  =&gt; 编译生成合约字节码 =&gt; 执行合约代码</p>
+              <p>本站刚开始就是使用GitHub Page + Gridea 搭建的，还配置了自己的域名，但是由于Github是在国外服务器的原因，所以国内访问速度不是很理想。</p>
+<!-- more -->
+<p>所以我想了几个解决方法：</p>
+<ol>
+<li>部署得到Coding</li>
+<li>Nginx 部署静态文件</li>
+<li>OSS 部署静态网站</li>
+</ol>
+<p>先说第一个，我去腾讯开发者平台注册了个人账号，设置了配置静态页面，但是它的自动更新代码部署的功能太差了，手动更新还提示在更新，去社区找解决方案，回答是换企业版，那个好点。然后我换了企业版，注册登录，部署页面，没问题，但是连接Gridea客户端的时候出问题了，提示用户名或者仓库Token有问题，试了好几次，还是行，后来放弃了！</p>
+<p>第二个Nginx 部署 和第三个 OSS 部署，这两个方式的最大麻烦之处在于需要手动更改页面中的路径，需要修改为相对路径，但是每次代码提交都需要改，还是放弃了。</p>
+<p>在我一筹莫展的时候，看到一篇文章，说的是用Caddy代理GitHub Page，通过配置WebHook实现自动更新页面的需求  <strong>（需要有一台公网服务器）</strong>。</p>
+<p>所以目前我的Blog解决方案就是： GitHub Page + Gridea + Caddy + Ngixn</p>
+<ul>
+<li>Gridea 和 Github Page 解决写博客和存储博客的问题</li>
+<li>Caddy 解决GitHub 的WebHook通知和直接更新部署静态页面的问题（支持自动申请免费证书）</li>
+<li>NGINX 解决配置端口和绑定证书的问题 （需要去阿里或者腾讯申请免费证书部署）</li>
+<li>OSS 负责图片和文件的存储，页面直接引入就好了</li>
+<li>CDN 为域名和OSS开启加速</li>
+</ul>
+<p>以上就是我的解决方案，整个弄下来涉及的东西也挺多的，但是好在配置并不复杂，而且访问速度还可以。</p>
+<p>码云免费版不支持绑定域名，年费99 ，不知道Gridea能不能连接上。</p>
+<p>如果你有好的解决方案欢迎留言😋！</p>
 
             </div>
             
-              <div class="tag-container">
-                
-                  <a href="https://heartbeat-boy.cn//tag/qu-kuai-lian" class="tag">
-                    区块链
-                  </a>
-                
-              </div>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://heartbeat-boy.cn//post/create_githubpage_blog">
+                  <h3 class="post-title">
+                    使用GitHub Page + Gridea 搭建不用备案的博客
+                  </h3>
+                </a>
+              </div>
             
 
             
