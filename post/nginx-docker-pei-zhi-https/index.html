@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Heartbeat_Boy</title>
+<title>Nginx + Docker 配置Https | Heartbeat_Boy</title>
 <meta name="description" content="我永远屈服于温柔，而你是温柔本身！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://heartbeat-boy.cn//styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -91,18 +97,39 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">Nginx + Docker 配置Https</h2>
+            <div class="post-date">2019-11-28</div>
             
-              <a class="tag" href="https://heartbeat-boy.cn//tag/blog">Blog</a>
+            <div class="post-content">
+              <p>123</p>
+
+            </div>
             
-              <a class="tag" href="https://heartbeat-boy.cn//tag/github">GitHub</a>
+              <div class="tag-container">
+                
+                  <a href="https://heartbeat-boy.cn//tag/docker" class="tag">
+                    Docker
+                  </a>
+                
+                  <a href="https://heartbeat-boy.cn//tag/nginx" class="tag">
+                    Nginx
+                  </a>
+                
+              </div>
             
-              <a class="tag" href="https://heartbeat-boy.cn//tag/tui-jian">推荐</a>
             
-              <a class="tag" href="https://heartbeat-boy.cn//tag/z-GT0-ICm">Gridea</a>
+
             
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -123,6 +150,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'f10ad47e39dc8e3e9a48',
+        clientSecret: '2c960b01453547d0e7653c36cd7211a912725851',
+        repo: 'Heartbeat-Boy.github.io',
+        owner: 'Heartbeat-Boy',
+        admin: ['Heartbeat-Boy'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
