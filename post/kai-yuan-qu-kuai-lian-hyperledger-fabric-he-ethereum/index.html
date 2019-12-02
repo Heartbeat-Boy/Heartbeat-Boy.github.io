@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>开源区块链Hyperledger Fabric 和 Ethereum  | Heartbeat_Boy</title>
+<meta name="description" content="我永远屈服于温柔，而你是温柔本身！">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1575289882623">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://heartbeat-boy.cn//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153553819-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153553819-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://heartbeat-boy.cn/">
+        <img src="https://heartbeat-boy.cn//images/avatar.png?v=1575289882623" class="site-logo">
+        <h1 class="site-title">Heartbeat_Boy</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      我永远屈服于温柔，而你是温柔本身！
+    </div>
+    <div class="site-footer">
+      Powered by <a href="#" target="_blank">Gridea</a> | <a class="rss" href="https://heartbeat-boy.cn//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">开源区块链Hyperledger Fabric 和 Ethereum </h2>
+            <div class="post-date">2019-12-02</div>
+            
+            <div class="post-content">
+              <p><strong>维基百科介绍</strong>：</p>
+<blockquote>
+<p><strong>以太坊（英语：Ethereum）是一个开源的有智能合约功能的公共区块链平台。通过其专用加密货币以太币（Ether，又称“以太币”）提供去中心化的虚拟机（称为“以太虚拟机”Ethereum Virtual Machine）来处理点对点合约。</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Hyperledger Fabric是一个许可的区块链架构(permissioned blockchain infrastructure)。其由IBM 和Digital Asset最初贡献给Hyperledger项目。它提供一个模块化的架构，把架构中的节点、智能合约的执行 (Fabric项目中称为&quot;chaincode&quot;) 以及可配置的共识和成员服务. 一个Fabric网络包含同伴节点（&quot;Peer nodes&quot;）执行chaincode合约，访问账本数据，背书交易并称为应用程序的接口。命令者节点（&quot;Orderer nodes&quot;）负责确保此区块链的一致性并传达被背书的交易给网络中的同伴们；以及MSP服务，主要作为证书权威（Certificate Authority）管理X.509 证书用于验证成员身份以及角色.</strong></p>
+</blockquote>
+<!-- more -->
+<h2 id="目的">目的</h2>
+<p>以太坊 (Ethereum)，是一个全球的、开源的去中心化应用平台，用户可以在以太坊中创建、使用智能合约和去中心化应用（DApp）</p>
+<p>Hyperledger是一种开源协作成果，旨在促进跨行业的区块链技术。这是由Linux基金会主办的全球合作，包括金融，银行，物联网，供应链，制造和技术领域的领导者<br>
+它旨在支持可插拔的组件实现，提供高度的机密性，弹性和可伸缩性。Hyperledger具有模块化架构，并为你的使用方式提供了很大的灵活性。其可扩展的架构为企业区块链提供了未来的解决方案</p>
+<h2 id="运行模式">运行模式</h2>
+<p><img src="https://lxy-oss-bucket.oss-cn-beijing.aliyuncs.com/UTOOLS1575272231675.png" alt="UTOOLS1575272231675.png"><br>
+以太网可以是公共的或私有的，没有任何权限，而Hyperledger是一个私有和许可的网络。<br>
+无许可区块链通常使用挖矿或获取交易费用来提供经济激励，以抵消基于“工作证明”（POW）的共识形式参与的额外成本。</p>
+<h2 id="保密机制">保密机制</h2>
+<p>以太坊区块链是无许可区块链中，几乎任何人都可以参与，虽然每个参与者都是匿名的，但是交易信息和个人账户信息是透明的。</p>
+<p>超级账本在一个限定的范围内，只有授权的节点和用户才能参与到交易和智能合约的执行中 来，而任何匿名节点或非授权用户均被拒绝服务。从团体联盟的角度 来看，这增加了区块链网络的安全可靠。</p>
+<h2 id="加密货币">加密货币</h2>
+<p>Hyperledger不需要加密货币进行交易。所以根本不需要采矿。这允许可扩展的一致性算法，其能够处理大多数企业应用程序所需的高速率交易</p>
+<p>因为以太坊有自己的以太币，在需要加密货币的用例中，它比Hyperledger更有利</p>
+<h2 id="超级账本的优点">超级账本的优点</h2>
+<ul>
+<li>身份识别和可审计性</li>
+<li>私有交易</li>
+<li>保密合约</li>
+<li>模块化共识</li>
+<li>性能</li>
+<li>可扩展性</li>
+<li>chaincode /智能合约</li>
+</ul>
+<h2 id="以太坊区块链优点">以太坊区块链优点</h2>
+<ul>
+<li>配置简单</li>
+<li>无需认证</li>
+<li>完全开放，交易透明</li>
+<li>图灵完备的合约语言</li>
+<li>内置的持久化状态存储</li>
+</ul>
+<p>以太坊强大的智能合约引擎使其成为任何类型应用程序的通用平台。然而，其无权操作模式和完全透明性是以性能可扩展性和隐私为代价的。</p>
+<p>Hyperledger通过允许的操作模式和细粒度的访问控制解决了性能可扩展性和隐私问题。此外，模块化架构允许Hyperledger针对多种应用程序进行定制，类似于工具箱。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://heartbeat-boy.cn//post/fen-xiang-yi-ge-wo-zi-ji-de-jie-dian">
+                  <h3 class="post-title">
+                    分享一些ShdowSocks节点
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'f10ad47e39dc8e3e9a48',
+        clientSecret: '2c960b01453547d0e7653c36cd7211a912725851',
+        repo: 'Heartbeat-Boy.github.io',
+        owner: 'Heartbeat-Boy',
+        admin: ['Heartbeat-Boy'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
