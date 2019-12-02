@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://heartbeat-boy.cn/</id>
-    <title>Heartbeat_Boy</title>
-    <updated>2019-12-02T14:24:17.801Z</updated>
+    <title>Heartbeat-Boy</title>
+    <updated>2019-12-02T14:25:24.889Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://heartbeat-boy.cn/"/>
     <link rel="self" href="https://heartbeat-boy.cn//atom.xml"/>
     <subtitle>我永远屈服于温柔，而你是温柔本身！</subtitle>
     <logo>https://heartbeat-boy.cn//images/avatar.png</logo>
     <icon>https://heartbeat-boy.cn//favicon.ico</icon>
-    <rights>All rights reserved 2019, Heartbeat_Boy</rights>
+    <rights>All rights reserved 2019, Heartbeat-Boy</rights>
     <entry>
         <title type="html"><![CDATA[开源区块链Hyperledger Fabric 和 Ethereum ]]></title>
         <id>https://heartbeat-boy.cn//post/kai-yuan-qu-kuai-lian-hyperledger-fabric-he-ethereum</id>
