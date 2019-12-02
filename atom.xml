@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://heartbeat-boy.cn/</id>
     <title>Heartbeat-Boy</title>
-    <updated>2019-12-02T14:25:24.889Z</updated>
+    <updated>2019-12-02T14:29:27.741Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://heartbeat-boy.cn/"/>
     <link rel="self" href="https://heartbeat-boy.cn//atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://heartbeat-boy.cn//favicon.ico</icon>
     <rights>All rights reserved 2019, Heartbeat-Boy</rights>
     <entry>
-        <title type="html"><![CDATA[开源区块链Hyperledger Fabric 和 Ethereum ]]></title>
+        <title type="html"><![CDATA[开源区块链Hyperledger Fabric 和 Ethereum 对比]]></title>
         <id>https://heartbeat-boy.cn//post/kai-yuan-qu-kuai-lian-hyperledger-fabric-he-ethereum</id>
         <link href="https://heartbeat-boy.cn//post/kai-yuan-qu-kuai-lian-hyperledger-fabric-he-ethereum">
         </link>
