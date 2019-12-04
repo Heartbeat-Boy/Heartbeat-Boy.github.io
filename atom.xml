@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://heartbeat-boy.cn/</id>
+    <id>https://heartbeat-boy.cn</id>
     <title>Heartbeat-Boy</title>
-    <updated>2019-12-04T10:00:34.344Z</updated>
+    <updated>2019-12-04T10:20:05.145Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://heartbeat-boy.cn/"/>
-    <link rel="self" href="https://heartbeat-boy.cn//atom.xml"/>
+    <link rel="alternate" href="https://heartbeat-boy.cn"/>
+    <link rel="self" href="https://heartbeat-boy.cn/atom.xml"/>
     <subtitle>我永远屈服于温柔，而你是温柔本身！</subtitle>
-    <logo>https://heartbeat-boy.cn//images/avatar.png</logo>
-    <icon>https://heartbeat-boy.cn//favicon.ico</icon>
+    <logo>https://heartbeat-boy.cn/images/avatar.png</logo>
+    <icon>https://heartbeat-boy.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, Heartbeat-Boy</rights>
     <entry>
         <title type="html"><![CDATA[以太坊区块链私链搭建]]></title>
-        <id>https://heartbeat-boy.cn//post/yi-tai-fang-qu-kuai-lian-si-lian-da-jian</id>
-        <link href="https://heartbeat-boy.cn//post/yi-tai-fang-qu-kuai-lian-si-lian-da-jian">
+        <id>https://heartbeat-boy.cn/post/yi-tai-fang-qu-kuai-lian-si-lian-da-jian</id>
+        <link href="https://heartbeat-boy.cn/post/yi-tai-fang-qu-kuai-lian-si-lian-da-jian">
         </link>
         <updated>2019-12-03T15:06:35.000Z</updated>
         <summary type="html"><![CDATA[<p>以太坊——全球的、开源的去中心化应用平台。</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[开源区块链Hyperledger Fabric 和 Ethereum 对比]]></title>
-        <id>https://heartbeat-boy.cn//post/hyperledger-fabric_VS_ethereum</id>
-        <link href="https://heartbeat-boy.cn//post/hyperledger-fabric_VS_ethereum">
+        <id>https://heartbeat-boy.cn/post/hyperledger-fabric_VS_ethereum</id>
+        <link href="https://heartbeat-boy.cn/post/hyperledger-fabric_VS_ethereum">
         </link>
         <updated>2019-12-02T06:46:03.000Z</updated>
         <summary type="html"><![CDATA[<p><strong>维基百科介绍</strong>：</p>
@@ -34,15 +34,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[免费ShdowSocks账号]]></title>
-        <id>https://heartbeat-boy.cn//post/free-shadowsocks</id>
-        <link href="https://heartbeat-boy.cn//post/free-shadowsocks">
+        <id>https://heartbeat-boy.cn/post/free-shadowsocks</id>
+        <link href="https://heartbeat-boy.cn/post/free-shadowsocks">
         </link>
         <updated>2019-11-30T14:33:13.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[搭建Shadowsocks科学上网]]></title>
-        <id>https://heartbeat-boy.cn//post/da-jian-shadowsocks-ke-xue-shang-wang</id>
-        <link href="https://heartbeat-boy.cn//post/da-jian-shadowsocks-ke-xue-shang-wang">
+        <id>https://heartbeat-boy.cn/post/da-jian-shadowsocks-ke-xue-shang-wang</id>
+        <link href="https://heartbeat-boy.cn/post/da-jian-shadowsocks-ke-xue-shang-wang">
         </link>
         <updated>2019-11-30T12:51:32.000Z</updated>
         <summary type="html"><![CDATA[<p><strong>Shadowsocks官网介绍：一个安全的socks5代理，旨在保护您的互联网流量。</strong><br>
@@ -54,8 +54,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[解决GitHub Page 部署博客访问速度慢]]></title>
-        <id>https://heartbeat-boy.cn//post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man</id>
-        <link href="https://heartbeat-boy.cn//post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man">
+        <id>https://heartbeat-boy.cn/post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man</id>
+        <link href="https://heartbeat-boy.cn/post/jie-jue-github-page-bu-shu-bo-ke-fang-wen-su-du-man">
         </link>
         <updated>2019-11-28T16:20:09.000Z</updated>
         <summary type="html"><![CDATA[<p>本站刚开始就是使用GitHub Page + Gridea 搭建的，还配置了自己的域名，但是由于Github是在国外服务器的原因，所以国内访问速度不是很理想。</p>
@@ -65,8 +65,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Nginx + Docker 配置Https]]></title>
-        <id>https://heartbeat-boy.cn//post/nginx-docker-pei-zhi-https</id>
-        <link href="https://heartbeat-boy.cn//post/nginx-docker-pei-zhi-https">
+        <id>https://heartbeat-boy.cn/post/nginx-docker-pei-zhi-https</id>
+        <link href="https://heartbeat-boy.cn/post/nginx-docker-pei-zhi-https">
         </link>
         <updated>2019-11-28T09:56:58.000Z</updated>
         <summary type="html"><![CDATA[<p>如果需要一篇文章快速实现https请点进来查看本文章，接下来我将介绍如何使用NGINX + Docker 实现域名HTTPS访问。</p>
@@ -76,8 +76,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[使用GitHub Page + Gridea 搭建不用备案的博客]]></title>
-        <id>https://heartbeat-boy.cn//post/create_githubpage_blog</id>
-        <link href="https://heartbeat-boy.cn//post/create_githubpage_blog">
+        <id>https://heartbeat-boy.cn/post/create_githubpage_blog</id>
+        <link href="https://heartbeat-boy.cn/post/create_githubpage_blog">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎进来观看这篇文章 ！<br>
