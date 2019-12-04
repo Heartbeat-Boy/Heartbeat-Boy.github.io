@@ -1,0 +1,485 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heartbeat-Boy</title>
+<meta name="description" content="我永远屈服于温柔，而你是温柔本身！" />
+<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1575453037648">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://heartbeat-boy.cn//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Heartbeat-Boy - Atom Feed" href="https://heartbeat-boy.cn//atom.xml">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://heartbeat-boy.cn/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://heartbeat-boy.cn//images/avatar.png?v=1575453037648" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Heartbeat-Boy</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%95%9C%E5%83%8F%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9">镜像版本选择：</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8Ehttp%E7%9A%84json-rpc-api%E9%80%89%E9%A1%B9">基于HTTP的JSON-RPC API选项：</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8">开始创建容器.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="#" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://heartbeat-boy.cn//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">以太坊区块链私链搭建</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-12-03 / 7 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://lxy-oss-bucket.oss-cn-beijing.aliyuncs.com/UTOOLS1575451598112.png" alt="">
+        
+        <div class="post-content yue">
+          <p>以太坊——全球的、开源的去中心化应用平台。</p>
+<!-- more -->
+<p>推荐使用Docker搭建，因为<strong>删除</strong>方便😀！如果重装也不会污染本地环境。</p>
+<p>GETH的Docker镜像文档： https://hub.docker.com/r/ethereum/client-go</p>
+<h3 id="镜像版本选择">镜像版本选择：</h3>
+<ul>
+<li>
+<p>ethereum/client-go:latest 是Geth的最新开发版本</p>
+</li>
+<li>
+<p>ethereum/client-go:stable 是Geth的最新稳定版本</p>
+</li>
+<li>
+<p>ethereum/client-go:{version} 是Geth在特定版本号上的稳定版本</p>
+</li>
+<li>
+<p>ethereum/client-go:release-{version} 是Geth在特定版本系列中的最新稳定版本</p>
+</li>
+<li>
+<p>ethereum/client-go:alltools-latest 是以太坊工具的最新开发版本</p>
+</li>
+<li>
+<p>ethereum/client-go:alltools-stable 是以太坊工具的最新稳定版本</p>
+</li>
+<li>
+<p>ethereum/client-go:alltools-{version} 是特定版本号的以太坊工具的稳定版本</p>
+</li>
+<li>
+<p>ethereum/client-go:alltools-release-{version} 是特定版本系列中以太坊工具的最新稳定版本</p>
+</li>
+</ul>
+<h4 id="基于http的json-rpc-api选项">基于HTTP的JSON-RPC API选项：</h4>
+<pre><code>--rpc 启用HTTP-RPC服务器
+
+--rpcaddrHTTP-RPC服务器侦听端口（默认：localhost）
+
+--rpcportHTTP-RPC服务器侦听端口（默认值：8545）
+
+--rpcapiAPI的通过HTTP-RPC接口提供的（默认：eth,net,web3）
+
+--rpccorsdomain 逗号分隔的域列表，从中接受跨域请求（强制浏览器）
+
+--ws 启用WS-RPC服务器
+
+--wsaddrWS-RPC服务器侦听端口（默认：localhost）
+
+--wsportWS-RPC服务器侦听端口（默认值：8546）
+
+--wsapiAPI的在WS-RPC接口提供的（默认：eth,net,web3）
+
+--wsorigins 接受网络套接字请求的来源
+
+--ipcdisable 禁用IPC-RPC服务器
+
+--ipcapiAPI的在IPC-RPC接口提供的（默认：admin,debug,eth,miner,net,personal,shh,
+txpool,web3）
+
+--ipcpath datadir中IPC套接字/管道的文件名（显式路径对其进行转义）
+</code></pre>
+<p><strong>注意，一定要把数据存储目录映射到本地，否则会丢失数据。</strong><br>
+这里最新是1.9.8,最新版的还有一些问题，所以我先暂且不用，用1.8稳定版。</p>
+<h3 id="开始创建容器">开始创建容器.</h3>
+<ol>
+<li>创建数据存放目录</li>
+</ol>
+<pre><code>mkdir ethereum
+</code></pre>
+<ol start="2">
+<li>创建创世文件 genesis.json，放到ethereum文件夹下。</li>
+</ol>
+<blockquote>
+<p>因为搭建私链需要创建网络的起源状态，所有节点都需要了解并达成共识。而genesis.json该文件包含生成块0所需的所有数据。</p>
+</blockquote>
+<p><strong>以下为以太坊Docker界面提供的示例：</strong></p>
+<pre><code>{
+  &quot;config&quot;: {
+    &quot;chainId&quot;: &lt;arbitrary positive integer&gt;,
+    &quot;homesteadBlock&quot;: 0,
+    &quot;eip150Block&quot;: 0,
+    &quot;eip155Block&quot;: 0,
+    &quot;eip158Block&quot;: 0,
+    &quot;byzantiumBlock&quot;: 0,
+    &quot;constantinopleBlock&quot;: 0,
+    &quot;petersburgBlock&quot;: 0
+  },
+  &quot;alloc&quot;: {},
+  &quot;coinbase&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
+  &quot;difficulty&quot;: &quot;0x20000&quot;,
+  &quot;extraData&quot;: &quot;&quot;,
+  &quot;gasLimit&quot;: &quot;0x2fefd8&quot;,
+  &quot;nonce&quot;: &quot;0x0000000000000042&quot;,
+  &quot;mixhash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;parentHash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;timestamp&quot;: &quot;0x00&quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chainId</td>
+<td>添加它的目的是使以太坊网络上的交易看起来与以太坊经典网络上的交易不同。交易的签名方式取决于所chainID使用的方式。1 为以太坊主链</td>
+</tr>
+<tr>
+<td>homesteadBlock</td>
+<td>当设置为0时，表示您将使用以太坊的Homestead版本。这是预期的，并且mainnet gensis配置也将此设置为0</td>
+</tr>
+<tr>
+<td>eip150Block</td>
+<td>EIP代表以太坊改进提案。以太坊是开源的，因此人们以讨论和代码的形式提出建议。一些被接受，其他被拒绝。EIP150是一项被接受的提案</td>
+</tr>
+<tr>
+<td>byzantiumBlock</td>
+<td>暂未找到说明</td>
+</tr>
+<tr>
+<td>constantinopleBlock</td>
+<td>暂未找到说明</td>
+</tr>
+<tr>
+<td>petersburgBlock</td>
+<td>暂未找到说明</td>
+</tr>
+<tr>
+<td>alloc</td>
+<td>允许定义预先填充的钱包列表。这是以太坊特定功能，可以处理“以太网预售”时期。就是指定账户初始化余额</td>
+</tr>
+<tr>
+<td>coinbase</td>
+<td>从“挖掘”创世块中获得的以太币奖励归于160位coinbase地址。这在创世块中是没有意义的（尤其是因为您可以自由分配任意数量的以太币给任何账户），但是同样，目标是使创世块看起来与区块链上的任何其他块相同，因此这个值存在。</td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>该值确定了开采一个区块的难度。</td>
+</tr>
+<tr>
+<td>extraData</td>
+<td>可选免费，但最多32字节长的空间</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td>该链上任何块可以支持的最大计算数量。</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>mixhash和nonce一起使用以确定该块是否被正确开采。我们两者都有的原因是，如果攻击者伪造带有false的数据块nonce，则网络中其他节点发现伪造的数据在计算上仍然是昂贵的nonce。mixhash是一种中间计算，用于查找nonce确定成本不高的方法。因此，如果网络上的其他节点在mixhash验证块时发现了错误，则它们可以丢弃该块，而无需执行其他操作来检查nonce。</td>
+</tr>
+<tr>
+<td>mixhash</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>parentHash</td>
+<td>上一个块的标头的Keccak 256位哈希。这在创世块中没有意义，因为块0没有父代。但是，创建创世块的目的是使其具有与其他任何块相同的格式，因此我们拥有此字段并为其分配值。</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>创建块时Unix time（）函数的输出。</td>
+</tr>
+</tbody>
+</table>
+<p>如果自己搭建测试，只需要修改一个chainId 就好了。</p>
+<ol>
+<li>创建容器, 注意开放的端口不要冲突，挂载目录是否是自己的。</li>
+</ol>
+<pre><code>docker run -d --name ethereum -v ~/ethereum:/root \
+-p 8545:8545 -p 8200:8200 \
+ethereum/client-go:release-1.8
+</code></pre>
+<ol>
+<li>进入容器，查看是否有配置文件，然后执行初始化</li>
+</ol>
+<pre><code>cd root
+ls
+</code></pre>
+<p>如果root目录下有genesis.json，就可以执行初始化命令，如果没有，请检查容器创建命令和挂在目录。<br>
+初始化的目的是保证区块链的参数被正确设置。</p>
+<pre><code>geth --datadir data init genesis.json
+
+
+--datadir  指定数据存放位置，如果data文件夹不存在会自动创建
+</code></pre>
+<ol start="5">
+<li>启动节点</li>
+</ol>
+<pre><code>geth --datadir /root/data  --syncmode &quot;fast&quot; --networkid 12345 --port 8200 --rpc  --rpcaddr 0.0.0.0  --rpccorsdomain &quot;*&quot; --rpcport 8545 --nodiscover --rpcapi &quot;eth,net,web3,personal,admin,shh,txpool,debug,miner&quot; console
+</code></pre>
+<pre><code>--datadir              数据存放目录
+
+--syncmode             数据同步方式 
+
+--networkid            区分链的标识，网络标识符
+
+--port                 节点通信的端口
+
+--rpc                  启用HTTP-RPC服务器
+                         
+--rpcaddr value        HTTP-RPC服务器接口地址(默认值:“localhost”)
+                         
+--rpcport value        HTTP-RPC服务器监听端口(默认值:8545)
+                         
+--rpcapi value         基于HTTP-RPC接口提供的API，默认只有eth,net,web3
+
+--rpccorsdomain value  允许跨域请求的域名列表(逗号分隔)(浏览器强制)
+
+console                 启动交互JavaScript环境
+</code></pre>
+<p>运行会进入一个JavaScript的控制台，可以在里边执行命令控制节点<br>
+按照以上步骤在另外一台机器上创建节点，注意genesis.json必须一致，启动的networkid必须一致。<br>
+如果是创建容器，注意端口不要重复，挂载目录不能重复，容器名称不要重复。<br>
+创建成功后，现在你有两个节点了。<br>
+在其中一个节点上执行以下命令获取节点的enode信息。</p>
+<pre><code>&gt; admin.nodeInfo.enode
+</code></pre>
+<p>使另外一个节点连接到这个节点，执行admin.addPeer()命令。里边放ecnode信息。</p>
+<pre><code>admin.addPeer(&quot;enode://c1eaff6c0e47edec09a05f46d8de3329d12bc0e05dd7e52ea16472d717eb16e73a80f465b1aa376e16e0bfbee536cba38d59f991370c04da1d8cbc7be134d814@127.0.0.1:8200?discport=0&quot;)
+</code></pre>
+<p>执行连接命令，如果连接成功，且节点中有数据，会自动开始同步数据。<br>
+查看节点连接信息</p>
+<pre><code>admin.peers
+</code></pre>
+<p>如果有数据，说明连接成功。</p>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://heartbeat-boy.cn//post/hyperledger-fabric_VS_ethereum">
+                <h3 class="post-title">
+                  开源区块链Hyperledger Fabric 和 Ethereum 对比
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'f10ad47e39dc8e3e9a48',
+    clientSecret: '2c960b01453547d0e7653c36cd7211a912725851',
+    repo: 'Heartbeat-Boy.github.io',
+    owner: 'Heartbeat-Boy',
+    admin: ['Heartbeat-Boy'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://heartbeat-boy.cn//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
