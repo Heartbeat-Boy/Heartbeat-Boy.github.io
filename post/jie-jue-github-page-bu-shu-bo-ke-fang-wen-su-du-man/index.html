@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heartbeat-Boy</title>
+<meta name="description" content="我永远屈服于温柔，而你是温柔本身！" />
+<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1575453631256">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://heartbeat-boy.cn//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Heartbeat-Boy - Atom Feed" href="https://heartbeat-boy.cn//atom.xml">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://heartbeat-boy.cn/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://heartbeat-boy.cn//images/avatar.png?v=1575453631256" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Heartbeat-Boy</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="#" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://heartbeat-boy.cn//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">解决GitHub Page 部署博客访问速度慢</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-11-29 / 2 min read
+        </div>
+        
+        <div class="post-content yue">
+          <p>本站刚开始就是使用GitHub Page + Gridea 搭建的，还配置了自己的域名，但是由于Github是在国外服务器的原因，所以国内访问速度不是很理想。</p>
+<!-- more -->
+<p>所以我想了几个解决方法：</p>
+<ol>
+<li>部署得到Coding</li>
+<li>Nginx 部署静态文件</li>
+<li>OSS 部署静态网站</li>
+</ol>
+<p>先说第一个，我去腾讯开发者平台注册了个人账号，设置了配置静态页面，但是它的自动更新代码部署的功能太差了，手动更新还提示在更新，去社区找解决方案，回答是换企业版，那个好点。然后我换了企业版，注册登录，部署页面，没问题，但是连接Gridea客户端的时候出问题了，提示用户名或者仓库Token有问题，试了好几次，还是行，后来放弃了！</p>
+<p>第二个Nginx 部署 和第三个 OSS 部署，这两个方式的最大麻烦之处在于需要手动更改页面中的路径，需要修改为相对路径，但是每次代码提交都需要改，还是放弃了。</p>
+<p>在我一筹莫展的时候，看到一篇文章，说的是用Caddy代理GitHub Page，通过配置WebHook实现自动更新页面的需求  <strong>（需要有一台公网服务器）</strong>。</p>
+<p>所以目前我的Blog解决方案就是： GitHub Page + Gridea + Caddy + Ngixn</p>
+<ul>
+<li>Gridea 和 Github Page 解决写博客和存储博客的问题</li>
+<li>Caddy 解决GitHub 的WebHook通知和直接更新部署静态页面的问题（支持自动申请免费证书）</li>
+<li>NGINX 解决配置端口和绑定证书的问题 （需要去阿里或者腾讯申请免费证书部署）</li>
+<li>OSS 负责图片和文件的存储，页面直接引入就好了</li>
+<li>CDN 为域名和OSS开启加速</li>
+</ul>
+<p>以上就是我的解决方案，整个弄下来涉及的东西也挺多的，但是好在配置并不复杂，而且访问速度还可以。</p>
+<p>码云免费版不支持绑定域名，年费99 ，不知道Gridea能不能连接上。</p>
+<p>如果你有好的解决方案欢迎留言😋！</p>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://heartbeat-boy.cn//tag/nginx">
+            <span class="flex-auto">Nginx</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://heartbeat-boy.cn//tag/blog">
+            <span class="flex-auto">Blog</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://heartbeat-boy.cn//tag/github">
+            <span class="flex-auto">GitHub</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://heartbeat-boy.cn//tag/z-GT0-ICm">
+            <span class="flex-auto">Gridea</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://heartbeat-boy.cn//post/da-jian-shadowsocks-ke-xue-shang-wang">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  搭建Shadowsocks科学上网
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://heartbeat-boy.cn//post/nginx-docker-pei-zhi-https">
+                <h3 class="post-title">
+                  Nginx + Docker 配置Https
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'f10ad47e39dc8e3e9a48',
+    clientSecret: '2c960b01453547d0e7653c36cd7211a912725851',
+    repo: 'Heartbeat-Boy.github.io',
+    owner: 'Heartbeat-Boy',
+    admin: ['Heartbeat-Boy'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://heartbeat-boy.cn//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
