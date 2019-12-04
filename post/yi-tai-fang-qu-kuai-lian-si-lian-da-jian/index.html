@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Heartbeat-Boy</title>
 <meta name="description" content="我永远屈服于温柔，而你是温柔本身！" />
-<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1575453037648">
+<link rel="shortcut icon" href="https://heartbeat-boy.cn//favicon.ico?v=1575453631256">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -24,7 +24,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://heartbeat-boy.cn/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://heartbeat-boy.cn//images/avatar.png?v=1575453037648" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://heartbeat-boy.cn//images/avatar.png?v=1575453631256" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Heartbeat-Boy</h1>
       </div>
@@ -45,6 +45,7 @@
 </ul>
 </li>
 <li><a href="#%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8">开始创建容器.</a></li>
+<li><a href="#%E5%90%8C%E6%AD%A5%E6%A8%A1%E5%BC%8F">同步模式</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +98,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">以太坊区块链私链搭建</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-12-03 / 7 min read
+          2019-12-03 / 9 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://lxy-oss-bucket.oss-cn-beijing.aliyuncs.com/UTOOLS1575451598112.png" alt="">
@@ -297,7 +298,7 @@ ls
 </code></pre>
 <pre><code>--datadir              数据存放目录
 
---syncmode             数据同步方式 
+--syncmode             数据同步方式 下边有详细介绍
 
 --networkid            区分链的标识，网络标识符
 
@@ -322,14 +323,50 @@ console                 启动交互JavaScript环境
 在其中一个节点上执行以下命令获取节点的enode信息。</p>
 <pre><code>&gt; admin.nodeInfo.enode
 </code></pre>
+<pre><code>&quot;enode://c1eaff6c0e47edec09a05f46d8de3329d12bc0e05dd7e52ea16472d717eb16e73a80f465b1aa376e16e0bfbee536cba38d59f991370c04da1d8cbc7be134d814@127.0.0.1:8200?discport=0&quot;
+</code></pre>
 <p>使另外一个节点连接到这个节点，执行admin.addPeer()命令。里边放ecnode信息。</p>
 <pre><code>admin.addPeer(&quot;enode://c1eaff6c0e47edec09a05f46d8de3329d12bc0e05dd7e52ea16472d717eb16e73a80f465b1aa376e16e0bfbee536cba38d59f991370c04da1d8cbc7be134d814@127.0.0.1:8200?discport=0&quot;)
 </code></pre>
 <p>执行连接命令，如果连接成功，且节点中有数据，会自动开始同步数据。<br>
 查看节点连接信息</p>
-<pre><code>admin.peers
+<pre><code>&gt; admin.peers
+</code></pre>
+<pre><code>[{
+    caps: [&quot;eth/62&quot;, &quot;eth/63&quot;],
+    enode: &quot;enode://f366990325e8293d39edff4aa573b7be5963935a08425d560db2671e4004aab1ed54373f9e8123a405bebc073d6ca391b45802fe124f5d30f433eb4eabd79d5b@47.103.74.42:8200?discport=0&quot;,
+    id: &quot;05b30ae8a5f5268acf384bcfa364ed63b38ce7b93327bdc94bb058692647228d&quot;,
+    name: &quot;Geth/v1.8.27-stable-4bcc0a37/linux-amd64/go1.11.9&quot;,
+    network: {
+      inbound: false,
+      localAddress: &quot;172.17.0.2:59582&quot;,
+      remoteAddress: &quot;47.103.74.42:8200&quot;,
+      static: true,
+      trusted: false
+    },
+    protocols: {
+      eth: {
+        difficulty: 208782682,
+        head: &quot;0x171a7dc4d95d83b7af3e45ada7971f24e8ceecb58c415e19a04e5a22bd7e403a&quot;,
+        version: 63
+      }
+    }
+}]
 </code></pre>
 <p>如果有数据，说明连接成功。</p>
+<h3 id="同步模式">同步模式</h3>
+<ul>
+<li>
+<p>fast 当指定同步模式为 “fast” 时，以太坊节点会从网络同步所有的区块头，区块体以及状态数据，但不对区块中的交易进行重放，只会对区块中的数据进行校验。</p>
+</li>
+<li>
+<p>light 当指定同步模式为“light”时，以太坊节点仅从网络中同步所有区块头，不去同步区块体，也不去同步状态数据，仅在需要相应区块和状态数据时从网络上获取。</p>
+</li>
+<li>
+<p>full 当指定同步模式为&quot;full&quot;时，以太坊节点会从网络同步所有的区块头，区块体并重放区块中的交易以生成状态数据.</p>
+</li>
+</ul>
+<p><strong>默认： fast</strong></p>
 
         </div>
 
